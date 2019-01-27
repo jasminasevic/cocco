@@ -13,7 +13,7 @@
                                 <li>
                                     <i class="icon-phone-call"></i>+38111-123-4567</li>
                                 <li>
-                                    <i class="icon-envelope"></i>info@cocco.com</li>
+                                <i class="icon-envelope"></i>info@cocco.com</li>
                             </ul>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                                 <a href="index.php?page=about_us">About</a>
                             </li>
                             <li>
-                                <a href="index.php?page=contact.php">Contact</a>
+                                <a href="index.php?page=contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -53,13 +53,13 @@
                             <a href="#" class="instagram external" data-animate-hover="shake">
                                 <i class="fa fa-instagram"></i>
                             </a>
-                            <a href="#" class="email external" data-animate-hover="shake">
+                            <a href="mailto:info@cocco.com" class="email external" data-animate-hover="shake">
                                 <i class="fa fa-envelope"></i>
                             </a>
                         </p>
                         <ul class="angle angle-right">
                             <li>
-                                <a href="index.php?page=about_author">Author </a>
+                                <a href="index.php?page=about_author&id_user=1">Author </a>
                             </li>
                             <li>
                                 <a href="#">Documentation </a>

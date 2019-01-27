@@ -20,16 +20,13 @@
                                     <a href="index.php?page=blog_listing" title="Magazine">Magazine</a>
                                     <ul>
                                         <li>
-                                            <a href="index.php?page=blog_listing" title="Fashio">Fashion</a>
+                                            <a href="index.php?page=blog_listing" title="Fashion">Fashion</a>
                                         </li>
                                         <li>
                                             <a href="index.php?page=blog_listing" title="Health and Beauty">Health and Beauty</a>
                                         </li>
                                         <li>
                                             <a href="index.php?page=blog_listing" title="Travel">Travel</a>
-                                        </li>
-                                        <li>
-                                            <a href="index.php?page=single_blog" title="Blog Single ">Blog Single</a>
                                         </li>
                                     </ul>
                                 </li>

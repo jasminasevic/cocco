@@ -4,20 +4,20 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="page-section">
-                        <h1 class="page-title ">Blog</h1>
+                        <h1 class="page-title ">Magazine</h1>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
                                 <li>
-                                    <a href="#">Home</a>
+                                    <a href="index.php?page=main">Home</a>
                                 </li>
-                                <li>Blog</li>
+                                <li>Magazine</li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                     <div class="page-section">
-                        <p>Please Enjoy!! Healthy Eating and Dietitian blogs. Get nutrition advice, tips and facts from Jessica</p>
+                        <p>Discover the Latest Fashion, Health &amp; Travel News on Cocco Magazine</p>
                     </div>
                 </div>
             </div>
@@ -28,145 +28,47 @@
     <div class="space-medium">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-1.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">diet tips</a>
-                                </span>
-                                <span class="meta-date">30 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Green smoothie to go</a>
-                            </h4>
-                            <p>Nam vitae aliquet metus semper vehicula juonecin dolor....</p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-2.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">Weight Loss</a>
-                                </span>
-                                <span class="meta-date">29 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Inflammation Fighting Foods</a>
-                            </h4>
-                            <p>Vitae aliquet metus semperveicula juonecin doloreer ornare....</p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-3.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">Health Care</a>
-                                </span>
-                                <span class="meta-date">28 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Habits, health &amp; fitness news catchup</a>
-                            </h4>
-                            <p>Aliquet metus semper vehiculase juonecin dolor sederate....</p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-4.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">Health Care</a>
-                                </span>
-                                <span class="meta-date">27 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Drinking water dilutes stomach acid</a>
-                            </h4>
-                            <p>Juctus metuis acmetus pharetra efficitur velit neincidu...</p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-5.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">Weight Loss</a>
-                                </span>
-                                <span class="meta-date">26 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Top 5 natural therapies to fight hpylori</a>
-                            </h4>
-                            <p>Vivamus qususcipit auguenon placerat urnurabitursed...</p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="post-block">
-                        <div class="post-img">
-                            <a href="#" class="imghover">
-                                <img src="./images/post-img-small-6.jpg" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <!-- post block -->
-                        <div class="post-content">
-                            <div class="meta">
-                                <span class="meta-categories">
-                                    <a href="#">Weight Loss</a>
-                                </span>
-                                <span class="meta-date">25 July, 2020</span>
-                            </div>
-                            <h4>
-                                <a href="#" class="title">Essential oils for fixing the gut</a>
-                            </h4>
-                            <p>Morbi ut metus in magna luctus veneuis veli vehicula... </p>
-                            <a href="#" class="btn-link">read more</a>
-                        </div>
-                    </div>
-                </div>
 
+                <?php $articles = executeQuery("SELECT * FROM posts 
+                INNER JOIN categories ON category_id = id_category INNER JOIN users ON user_id=id_user ". 
+                ($_GET['id_category'] ? " WHERE id_category=". $_GET['id_category'] : "")
+                . 
+                ($_GET['id_user'] ? " WHERE id_user=". $_GET['id_user'] : "")
+                . " ORDER BY publishing_date DESC"); 
+                   foreach($articles as $article):
+                ?>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="post-block">
+                        <div class="post-img">
+                            <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="imghover">
+                                <img src="<?= $article->featured_image_small ?>" alt="<?= $article->post_title?>" class="img-responsive">
+                            </a>
+                        </div>
+                        <!-- post block -->
+                        <div class="post-content">
+                            <div class="meta">
+                                <span class="meta-categories">
+                                    <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>"><?= $article->category_title?></a>
+                                </span>
+                                <span class="meta-date">
+                                    <?php $publishing_date_time=explode(" ", $article->publishing_date);
+                                        $publishing_date = explode("-", $publishing_date_time[0]);
+                                        $publishing_time = explode(":", $publishing_date_time[1]);
+                                        $timestamp = mktime($publishing_time[0], $publishing_time[1], $publishing_time[2], $publishing_date[1], $publishing_date[2], $publishing_date[0]);
+                                        echo date("d M, Y", $timestamp);
+                                    ?>
+                                </span>
+                            </div>
+                            <h4>
+                                <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="title"><?= $article->post_title?></a>
+                            </h4>
+                            <p><?= $article->summary?></p>
+                            <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="btn-link">read more</a>
+                        </div>
+                    </div>
+                </div>
+                   <?php endforeach; ?>
 
                 <!-- pagination start -->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

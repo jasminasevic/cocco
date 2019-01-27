@@ -51,7 +51,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="post-block">
                         <div class="post-img">
-                            <a href="#" class="imghover">
+                            <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="imghover">
                                 <img src="<?= $article->featured_image_small?>" alt="<?= $article->post_title?>" class="img-responsive">
                             </a>
                         </div>
@@ -59,14 +59,14 @@
                         <div class="post-content">
                             <div class="meta">
                                 <span class="meta-categories">
-                                    <a href="#"><?= $article->category_title?></a>
+                                    <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>"><?= $article->category_title?></a>
                                 </span>
                                 <span class="meta-date">
                                     <?php $publishing_date_time=explode(" ", $article->publishing_date);
                                         $publishing_date = explode("-", $publishing_date_time[0]);
                                         $publishing_time = explode(":", $publishing_date_time[1]);
                                         $timestamp = mktime($publishing_time[0], $publishing_time[1], $publishing_time[2], $publishing_date[1], $publishing_date[2], $publishing_date[0]);
-                                        echo date("d F, Y", $timestamp);
+                                        echo date("d M, Y", $timestamp);
                                     ?>
                                 </span>
                             </div>
@@ -74,13 +74,11 @@
                                 <a href="#" class="title"><?= $article->post_title?></a>
                             </h4>
                             <p><?= $article->summary?></p>
-                            <a href="#" class="btn-link">read more</a>
+                            <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="btn-link">read more</a>
                         </div>
                     </div>
                 </div>
                     <?php endforeach;?>
-
-
             </div>
         </div>
     </div>

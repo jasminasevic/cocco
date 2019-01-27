@@ -4,18 +4,18 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="page-section">
-                        <h1 class="page-title ">Frequantly Ask Questions</h1>
+                        <h1 class="page-title ">About us</h1>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
                                 <li><a href="#">Home</a></li>
-                                <li>FAQ</li>
+                                <li>About us</li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                     <div class="page-section">
-                        <p>“These FAQs provide basic information and related resources for common food and nutrition questions”</p>
+                        <p>Discover the Latest Fashion, Health &amp; Travel News on Cocco Magazine</p>
                     </div>
                 </div>
             </div>
@@ -96,32 +96,15 @@
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                            <div class=" widget">
-                                <!-- Post author -->
-                                <h2 class="widget-title">About author</h2>
-                                <div class=" author-block">
-                                    <div class="author-img">
-                                        <a href="#"><img src="images/author.jpg" class="img-circle" alt=""></a>
-                                    </div>
-                                    <div class="author-post-content ">
-                                        <div class="author-header">
-                                            <h3><a href="#" class="title">George Krupp</a></h3></div>
-                                        <div class="author-meta ">Nutrition, Diet Coach</div>
-                                        <div class="author-content">
-                                            <p>Aenean eu faucibus lectuenean is nec iaculis veliliam luctus enatises misit amet interdumdui.</p>
-                                            <a href="#" class="btn btn-primary">View All Post</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.post author -->
+                            
                             <div class="widget">
                         <h2 class="widget-title">
                 contact info</h2>
                         <div class="contact-info">
                             <ul>
-                                <li><i class="icon-placeholder"></i>2177 Shearwood Forest, NH 03801</li>
-                                <li><i class="icon-phone-call"></i>+180-123-4567</li>
-                                <li><i class="icon-envelope"></i>info@dietcoach.com</li>
+                                <li><i class="icon-placeholder"></i>Knez Mihailova 1, Belgrade, Serbia</li>
+                                <li><i class="icon-phone-call"></i>+38111-123-4567</li>
+                                <li><i class="icon-envelope"></i>info@cocco.com</li>
                             </ul>
                         </div>
                     </div>

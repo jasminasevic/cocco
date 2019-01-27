@@ -4,61 +4,76 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="page-section">
-                        <h1 class="page-title ">blog single</h1>
+                        <h1 class="page-title ">Cocco Article</h1>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li><a href="#">Home</a></li>
-                                <li>blog single</li>
+                                <li><a href="index.php?page=main">Home</a></li>
+                                <li>Article</li>
                             </ol>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                     <div class="page-section">
-                        <p>“Please Enjoy!! Healthy Eating and Dietitian blogs. Get nutrition advice, tips and facts from Jessica”</p>
+                        <p>Discover the Latest Fashion, Health &amp; Travel News on Cocco Magazine</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- page-header-close -->
+
     <div class="space-medium">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                     <div class="row">
                         <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+
+                        <?php 
+                            if(isset($_GET['id'])) :
+                            $id = $_GET['id'];
+
+                            $query_prepare =$conn->prepare("SELECT * FROM posts p INNER JOIN categories c ON p.category_id=c.id_category 
+                            INNER JOIN users u ON p.user_id=u.id_user WHERE id_post = :id"); //Pripremanje upita za izvrsavanje
+                            $query_prepare->execute(array(":id"=>$id)); // Izvrsavanje upita sa konkretnim parametrom
+                            $single_post = $query_prepare->fetch(); // Dohvatanje samo jednog reda kao rezultat
+
+                            if(isset($single_post)): 
+                        ?>
+
                             <div class="post-block">
                                 <!-- post holder -->
                                 <div class="post-img">
                                     <!-- post img -->
-                                    <a href="#" class="imghover"><img src="images/post-img-1.jpg" alt="" class="img-responsive"></a>
+                                    <img src="<?= $single_post->featured_image?>" alt="<?= $single_post->post_title?>" class="img-responsive">
                                 </div>
                                 <!-- /.post img -->
                                 <div class="post-content">
                                     <!-- post content -->
                                     <div class="post-header">
                                         <!-- post header -->
-                                        <h2 class="post-title"><a href="#
-                                        " class="title">Green smoothie to go</a></h2>
+                                        <h2 class="post-title"><?= $single_post->post_title?></h2>
                                         <div class="meta">
-                                            <span class="meta-categories"><a href="#">diet tips</a></span>
-                                            <span class="meta-date">30 July, 2020</span>
-                                            <span class="meta-comments">24 comments</span>
+                                            <span class="meta-categories"><a href="#"><?= $single_post->category_title?></a></span>
+                                            <span class="meta-date">
+                                            <?php $publishing_date_time=explode(" ", $single_post->publishing_date);
+                                                $publishing_date = explode("-", $publishing_date_time[0]);
+                                                $publishing_time = explode(":", $publishing_date_time[1]);
+                                                $timestamp = mktime($publishing_time[0], $publishing_time[1], $publishing_time[2], $publishing_date[1], $publishing_date[2], $publishing_date[0]);
+                                                echo date("d F, Y", $timestamp);
+                                            ?>
+
+                                            </span>
                                         </div>
                                     </div>
                                     <!-- /.post header -->
-                                    <p>Nunc cursus leo risus non ac efficitur vel sed Mauris iaculis finibus ex et viverra. Aliquam blandit ornare justo, in sagittis sem ornare sit amet. Cras posuere vel ex at vulputate. Praesent volutpat consequat urt sagitton dimentum ditpat vivamus auctor magna eu vel</p>
-                                    <img src="images/left-image.jpg" alt="" class="alignleft">
-                                    <p class="mb60"> Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aliquam idnisi consectetur auctor libero sagittis, tempor elituspendisse sit amet justo pulvinar eleifend nulla quislacinia eratn lacinia nisidapibus </p>
-                                    <img src="images/right-image.jpg" alt="" class="alignright">
-                                    <p> Aliquam idnisi consectetur auctor libero sagittis, tempor elituspendisse sit amet justo pulvinar eleifend nulla Praesent vel aliquet urnaauris molestie sollicitudin nisl non volutpatm mollis eros lacusac lorem tristique arcu facilisisquislacinia eratn lacinia nisidapibus justo viverrasit amet sodales risus lorem ipusm dfolor sit ulter lacina egeasrte noultriciesullam egestas egestaante non semper enimc facilisis auguenetus et malesuada lorem ipusm dolor sit famese gestas. </p>
-                                    <p>Praesent vel aliquet urnaauris molestie sollicitudin nisl non volutpatm mollis eros lacusac lorem tristique arcu facilisis r elituspendisse sit amet justo pulvinar eleifend nulla quis semper enimc facilisis sedamus ullamcorper accumsan augue quis egestas.</p>
+                                    <p> <?= $single_post->post_text?></p>
                                     <div class="related-post-block">
                                         <!-- related post block -->
                                         <div class="row">
                                             <div class="col-lg-12 col-sm-12 col-md-12 col-sm-12">
-                                                <h3 class="related-post-title">Recommended Posts</h3>
+                                                <h3 class="related-post-title">Related Posts</h3>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -71,7 +86,7 @@
                                                     <div class="related-post-content">
                                                         <h4 class="related-title"><a href="#" class="title">Drinking water dilutes 
 stomach acid</a></h4>
-                                                        <div class="meta"><span class="meta-categories">in <a href="#" class="">"diet tips"</a> </span></div>
+                                                        <div class="meta"><span class="meta-categories">in <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>" class="">"diet tips"</a> </span></div>
                                                     </div>
                                                 </div>
                                                 <!-- /.related post -->
@@ -85,7 +100,7 @@ stomach acid</a></h4>
                                                     <div class="related-post-content">
                                                         <h4 class="related-title"><a href="#" class="title">Top 5 natural therapies
 to fight hpylori</a></h4>
-                                                        <div class="meta"><span class="meta-categories">in <a href="#" class="">"health care</a> </span></div>
+                                                        <div class="meta"><span class="meta-categories">in <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>" class="">"health care</a> </span></div>
                                                     </div>
                                                 </div>
                                                 <!-- /.related post -->
@@ -93,143 +108,6 @@ to fight hpylori</a></h4>
                                         </div>
                                     </div>
                                     <!-- /.related post block -->
-                                    <div class="post-navigation">
-                                        <!-- post navigation -->
-                                        <div class="row">
-                                            <div class="nav-links">
-                                                <div class="col-md-6 col-sm-6">
-                                                    <div class="nav-previous">
-                                                        <!-- nav previous -->
-                                                        <a href="#" class="prev-link">previous post</a>
-                                                        <div class="previous-next-title">
-                                                            <h5><a href="#" class="title">Habits, health & fitness
-news catchup</a></h5>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /. nav previous -->
-                                                </div>
-                                                <div class="col-md-6 col-sm-6">
-                                                    <div class="nav-next text-right">
-                                                        <!-- nav next -->
-                                                        <a href="#" class="next-link">next post</a>
-                                                        <div class="previous-next-title">
-                                                            <h5><a href="#" class="title">Top 5 natural therapies to 
-fight hpylori</a></h5>
-                                                        </div>
-                                                    </div>
-                                                    <!-- /.nav previous -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /. post navigation -->
-                                    <!--comments start-->
-                                    <div class="comment-area">
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                                <div class="comment-title">
-                                                    <h3>(4)Comments</h3>
-                                                    <ul class="comment-list">
-                                                        <li>
-                                                            <div class="comment-author"> <img src="images/user-pic-1.jpg" alt="" class="img-circle"> </div>
-                                                            <div class="comment-info">
-                                                                <div class="comment-header">
-                                                                    <h4>Meredith Kuntz</h4>
-                                                                    <span class="comment-meta-date">25 July, 2020</span>
-                                                                </div>
-                                                                <div class="comment-content">
-                                                                    <p>Curabieet sitamet purus sed vestibulu ullam cursus, lacus eget pharetraium dui sed dius natoque penatibus et magnis dis parturiet the iaculis etiam.</p>
-                                                                    <div><a href="#" class="btn-link">Reply</a></div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <ul class="comment-list">
-                                                        <li>
-                                                            <div class="comment-author"><img src="images/user-pic-2.jpg" alt="" class="img-circle"></div>
-                                                            <div class="comment-info">
-                                                                <div class="comment-header">
-                                                                    <h4>Ruby Simms</h4>
-                                                                    <span class="comment-meta-date">25 July, 2020</span>
-                                                                </div>
-                                                                <div class="comment-content">
-                                                                    <p>Proin purus diam, tristique quis pharetra et, pellentesque et jngilorem ipsum dolro sit amet psumellam hendrerit nibh eget sagittis hendrerit.</p>
-                                                                    <div><a href="#" class="btn-link">Reply</a> </div>
-                                                                </div>
-                                                            </div>
-                                                            <ul class="comment-list childern">
-                                                                <li>
-                                                                    <div class="comment-author"><img src="images/user-pic-3.jpg" alt="" class="img-circle"></div>
-                                                                    <div class="comment-info">
-                                                                        <div class="comment-header">
-                                                                            <h4>Marquita Lee</h4>
-                                                                            <span class="comment-meta-date">25 July, 2020</span>
-                                                                        </div>
-                                                                        <div class="comment-content">
-                                                                            <p>Suscipit metus quis pharetra etpeio nec nisl convallrerit nibh eget sagittis hendrerit.sum rateget the iaculis etiam.</p>
-                                                                            <div><a href="#" class="btn-link">Reply</a></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                    <ul class="comment-list">
-                                                        <li>
-                                                            <div class="comment-author"><img src="images/user-pic-4.jpg" alt="" class="img-circle"></div>
-                                                            <div class="comment-info">
-                                                                <div class="comment-header">
-                                                                    <h4>Cassandra Craft</h4>
-                                                                    <span class="comment-meta-date">25 July, 2020</span>
-                                                                </div>
-                                                                <div class="comment-content">
-                                                                    <p>Curabieet sitamet purus sed vestibulu ullam cursus, lacus eget pharetraium dui sed dius natoque penatibus et magnis dis parturiet the iaculis etiam.</p>
-                                                                    <div><a href="#" class="btn-link">Reply</a></div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--comments close-->
-                                    <div class="leave-comments">
-                                        <h3 class="mb30">Leave A Reply</h3>
-                                        <form>
-                                            <div class="row">
-                                                <div class="col-lg-12 col-md-12 col-md-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label sr-only" for="textarea"></label>
-                                                        <textarea class="form-control" id="textarea" name="textarea" rows="6" placeholder="Comments"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label sr-only required" for="name"></label>
-                                                        <input id="name" name="name" type="text" class="form-control" placeholder="Name">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label sr-only required" for="email"></label>
-                                                        <input id="email" name="email" type="email" class="form-control" placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 col-md-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <label class="control-label sr-only required" for="website"></label>
-                                                        <input id="website" name="website" type="text" class="form-control" placeholder="Website">
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 col-md-12 col-md-6 col-xs-12">
-                                                    <div class="form-group">
-                                                        <button id="singlebutton" name="singlebutton" class="btn btn-primary btn-sm">Submit</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                                 <!-- /.post content -->
                             </div>
@@ -238,8 +116,33 @@ fight hpylori</a></h5>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <!-- widget-search-start -->
-                    <div class=" widget widget-search">
+                    <div class=" widget">
+                                <!-- Post author -->
+                                <h2 class="widget-title">About author</h2>
+                                <div class=" author-block">
+                                    <div class="author-img">
+                                    <a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="imghover">
+                                        <img src="<?= $single_post->image_small?>" class="img-circle" alt="<?= $single_post->first_name . ' ' . $single_post->last_name . ' portrait'  ?>">
+                                    </a>
+                                    </div>
+                                    <div class="author-post-content ">
+                                        <div class="author-header">
+                                            <h3><a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="title"><?= $single_post->first_name .' '. $single_post->last_name?> </a></h3></div>
+                                        <div class="author-meta "><?= $single_post->title ?></div>
+                                        <div class="author-content">
+                                            <p><?= $single_post->biography?></p>
+                                            <a href="index.php?page=blog_listing&id_user=<?= $single_post->id_user ?>" class="btn btn-primary">View All Post</a> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.post author -->
+                            <?php endif;?>
+                        <?php endif;?>
+
+
+                     <!-- widget-search-start -->
+                     <div class=" widget widget-search">
                         <form>
                             <div class="search-form">
                                 <input type="text" class="form-control " placeholder="Search Here">
@@ -248,90 +151,45 @@ fight hpylori</a></h5>
                         </form>
                     </div>
                     <!-- widget-search-close -->
-                    <div class=" widget">
-                                <!-- Post author -->
-                                <h2 class="widget-title">About author</h2>
-                                <div class=" author-block">
-                                    <div class="author-img">
-                                        <a href="#"><img src="images/author.jpg" class="img-circle" alt=""></a>
-                                    </div>
-                                    <div class="author-post-content ">
-                                        <div class="author-header">
-                                            <h3><a href="#" class="title">George Krupp</a></h3></div>
-                                        <div class="author-meta ">Nutrition, Diet Coach</div>
-                                        <div class="author-content">
-                                            <p>Aenean eu faucibus lectuenean is nec iaculis veliliam luctus enatises misit amet interdumdui.</p>
-                                            <a href="#" class="btn btn-primary">View All Post</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.post author -->
                     <!-- widget-categories-start -->
                     <div class=" widget widget-categories">
                         <h2 class="widget-title">Categories</h2>
                         <ul class="angle angle-right">
-                            <li><a href="#">Diet tips (10)</a></li>
-                            <li><a href="#">Health Care (12)</li>
-                            <li><a href="#">Healthy Recepies (14)</a></li>
-                            <li><a href="#">Weight Loss Tips (16)</a></li>
-                            <li><a href="#">Diet Programs (20)</a></li>
+                            <?php $categories=executeQuery("SELECT * FROM categories"); 
+                                foreach($categories as $category):
+                            ?>
+                                <li><a href="index.php?page=blog_listing&id_category=<?= $category->id_category; ?>"><?= $category->category_title?></a></li>
+                            <?php endforeach;?>
                         </ul>
                     </div>
                     <!-- widget-categories-close -->
-                    <!-- widget-archievs-start -->
-                    <div class=" widget widget-archives">
-                        <h2 class="widget-title">Archives</h2>
-                        <ul class="angle angle-right">
-                            <li> <a href="#">December (2016)</a></li>
-                            <li> <a href="#">November (2016)</a></li>
-                            <li><a href="#">October (2016)</a></li>
-                            <li><a href="#">September (2016)</a></li>
-                            <li> <a href="#">August (2016)</a></li>
-                        </ul>
-                    </div>
-                    <!-- widget-archievs-close -->
                     <!-- widget-recent-post-start -->
                     <div class=" widget widget-recent-post">
-                        <h2 class="widget-title mb20">Recent Post</h2>
+                        <h2 class="widget-title mb20">Recent Posts</h2>
                         <ul>
+                            <?php $articles = executeQuery("SELECT * FROM posts INNER JOIN categories ON category_id=id_category 
+                                 ORDER BY publishing_date DESC LIMIT 3");
+                                    foreach($articles as $article):
+                            ?>
                             <li>
                                 <div class="recent-post">
-                                    <div class="recent-pic">
-                                        <a href="#" class="imghover"><img src="./images/recent-post-1.jpg" alt="" class="img-responsive"></a>
-                                    </div>
                                     <div class="meta">
-                                        <span class="meta-date"> 23 July, 2020</span></div>
-                                    <h5 class="recent-title "><a href="#" class="title">Inflammation Fighting Foods</a></h5>
+                                        <span class="meta-date"> 
+                                            <?php $publishing_date_time=explode(" ", $article->publishing_date);
+                                                $publishing_date = explode("-", $publishing_date_time[0]);
+                                                $publishing_time = explode(":", $publishing_date_time[1]);
+                                                $timestamp = mktime($publishing_time[0], $publishing_time[1], $publishing_time[2], $publishing_date[1], $publishing_date[2], $publishing_date[0]);
+                                                echo date("d F, Y", $timestamp);
+                                            ?>
+                                        </span></div>
+                                    <h5 class="recent-title "><a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="title"><?= $article->post_title?></a></h5>
                                 </div>
                             </li>
-                            <li>
-                                <div class="recent-post">
-                                    <div class="recent-pic">
-                                        <a href="#" class="imghover"> <img src="./images/recent-post-2.jpg" alt="" class="img-responsive"></a>
-                                    </div>
-                                    <div class="meta">
-                                        <span class="meta-date"> 23 July, 2020</span> </div>
-                                    <h5 class="recent-title"><a href="#" class="title">Habits, health &amp; fitness news </a></h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="recent-post">
-                                    <div class="recent-pic">
-                                        <a href="#" class="imghover"> <img src="./images/recent-post-3.jpg" alt="" class="img-responsive"></a></div>
-                                    <div class="meta">
-                                        <span class="meta-date">23 July, 2020</span>
-                                    </div>
-                                    <h5 class="recent-title"><a href="#" class="title">Top 5 natural therapies  </a></h5>
-                                </div>
-                            </li>
+                                    <?php endforeach;?>
                         </ul>
+                            
                     </div>
                     <!-- widget-recent-post-close-->
-                    <!-- widget-Tag start -->
-                    <div class=" widget widget-tags ">
-                        <h2 class=" widget-title">Tags</h2>
-                        <a href="#">Diet Coach</a><a href="#">Health care</a><a href="#">Nutrition</a><a href="#">Nutritionist </a></div>
-                    <!-- widget-Tag close -->
                 </div>
             </div>
         </div>

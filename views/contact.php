@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
                     <div class="page-section">
-                        <p>“You can contact me any way that is convenient for you. I am available 24/7 via fax or email. You can also use a quick contact form below or visit my office personally.”</p>
+                        <p>Discover the Latest Fashion, Health &amp; Travel News on Cocco Magazine</p>
                     </div>
                 </div>
             </div>
@@ -35,20 +35,20 @@
                                 <form>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
-                                            <label class="control-label sr-only " for="name"></label>
-                                            <input id="name" type="text" placeholder="Name" class="form-control">
+                                            <label class="control-label sr-only " for="firstName"></label>
+                                            <input id="firstName" type="text" placeholder="First Name" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label class="control-label sr-only " for="lastName"></label>
+                                            <input id="lastName" type="text" placeholder="Last Name" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="email"></label>
                                             <input id="email" type="text" placeholder="Email" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <div class="form-group">
-                                            <label class="control-label sr-only " for="phone"></label>
-                                            <input id="phone" type="text" placeholder="phone" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -77,9 +77,9 @@
                 contact info</h2>
                         <div class="contact-info">
                             <ul>
-                                <li><i class="icon-placeholder"></i>2177 Shearwood Forest, NH 03801</li>
-                                <li><i class="icon-phone-call"></i>+180-123-4567</li>
-                                <li><i class="icon-envelope"></i>info@dietcoach.com</li>
+                                <li><i class="icon-placeholder"></i>Knez Mihailova 1, Belgrade, Serbia</li>
+                                <li><i class="icon-phone-call"></i>+38111-123-4567</li>
+                                <li><i class="icon-envelope"></i>info@cocco.com</li>
                             </ul>
                         </div>
                     </div>
