@@ -7,8 +7,8 @@
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
     <meta name="author" content="mailto:jasminasevic@yahoo.com" />
-    <meta name="keywords" content="shop, fashion, clothing, buy clothing brands, beautiful clothing, where to buy" />
-    <meta name="description" content="The best place to buy the most fashionable clothing brands" />
+    <meta name="keywords" content="beauty magazine, fashion tips, latest fashion news, travel magazine, travel tips" />
+    <meta name="description" content="Beauty, fashion, travel and lifestyle magazine" />
     <meta name="copyright" content="Jasmina Sevic @ 2019" />
     <meta name="language" content="english" />
 
@@ -17,7 +17,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>Cocco - Curated Fashion and Lifstyle Ideas</title>
+    <title>Cocco - Beauty, fashion, travel and lifestyle magazine</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Style CSS -->

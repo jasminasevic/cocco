@@ -1,3 +1,27 @@
+      <!-- page-header-start -->
+      <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="page-section">
+                        <h1 class="page-title ">Contact us</h1>
+                        <div class="page-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li>contact us</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+                    <div class="page-section">
+                        <p>“You can contact me any way that is convenient for you. I am available 24/7 via fax or email. You can also use a quick contact form below or visit my office personally.”</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- page-header-close -->
    <!-- testimonials-start -->
    <div class="space-medium">
         <div class="container">

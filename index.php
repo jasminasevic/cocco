@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-//include "php/connection.php";
+include "php/connection.php";
 
 $page="";
 if(isset($_GET['page'])){

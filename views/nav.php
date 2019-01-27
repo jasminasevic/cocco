@@ -17,21 +17,27 @@
                                     <a href="index.php" title="Home">Home</a>
                                 </li>
                                 <li class="has-sub">
-                                    <a href="?page=blog_listing" title="Blog">Blog</a>
+                                    <a href="index.php?page=blog_listing" title="Magazine">Magazine</a>
                                     <ul>
                                         <li>
-                                            <a href="?page=blog_listing" title="Blog">Blog Default</a>
+                                            <a href="index.php?page=blog_listing" title="Fashio">Fashion</a>
                                         </li>
                                         <li>
-                                            <a href="?page=single_blog" title="Blog Single ">Blog Single</a>
+                                            <a href="index.php?page=blog_listing" title="Health and Beauty">Health and Beauty</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.php?page=blog_listing" title="Travel">Travel</a>
+                                        </li>
+                                        <li>
+                                            <a href="index.php?page=single_blog" title="Blog Single ">Blog Single</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="?page=about_us" title="FAQ">About</a>
+                                    <a href="index.php?page=about_us" title="About us">About</a>
                                 </li>
                                 <li>
-                                    <a href="?page=contact" title="Contact Us">Contact</a>
+                                    <a href="index.php?page=contact" title="Contact Us">Contact</a>
                                 </li>
                             </ul>
                         </div>

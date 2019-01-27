@@ -9,9 +9,9 @@
                         <div class="">
                             <ul>
                                 <li>
-                                    <i class="icon-placeholder"></i>2177 Shearwood Forest , NH 03801</li>
+                                    <i class="icon-placeholder"></i>Knez Mihailova 1, Belgrade, Serbia</li>
                                 <li>
-                                    <i class="icon-phone-call"></i>+180-123-4567</li>
+                                    <i class="icon-phone-call"></i>+38111-123-4567</li>
                                 <li>
                                     <i class="icon-envelope"></i>info@cocco.com</li>
                             </ul>
@@ -27,13 +27,13 @@
                                 <a href="index.php">Home </a>
                             </li>
                             <li>
-                                <a href="?page=blog_listing">Blog </a>
+                                <a href="index.php?page=blog_listing">Blog </a>
                             </li>
                             <li>
-                                <a href="?page=about_us">About</a>
+                                <a href="index.php?page=about_us">About</a>
                             </li>
                             <li>
-                                <a href="?page=contact.php">Contact</a>
+                                <a href="index.php?page=contact.php">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -59,7 +59,7 @@
                         </p>
                         <ul class="angle angle-right">
                             <li>
-                                <a href="?page=about_author">Author </a>
+                                <a href="index.php?page=about_author">Author </a>
                             </li>
                             <li>
                                 <a href="#">Documentation </a>
