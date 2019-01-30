@@ -3,13 +3,15 @@
     <div class="slider">
         <div class="owl-carousel slider">
         
-        <?php $slider_details = executeQuery("SELECT * FROM main_slider INNER JOIN categories ON category_id=id_category"); 
+        <?php $slider_details = executeQuery("SELECT * FROM main_slider 
+        INNER JOIN categories ON category_id = id_category
+        INNER JOIN images ON image_id = id_image"); 
             foreach($slider_details as $slider):
         ?>
 
             <div class="item">
                 <div class="slider-img">
-                    <img src="<?= $slider->slider_image; ?>" alt="<?= $slider->title ?>">
+                    <img src="<?= $slider->image_path; ?>" alt="<?= $slider->alt ?>">
                 </div>
                 <div class="container">
                     <div class="row">
@@ -43,8 +45,11 @@
             </div>
             <div class="row">
                 
-                <?php $articles = executeQuery("SELECT * FROM posts INNER JOIN categories ON category_id=id_category 
-                INNER JOIN users ON user_id=id_user ORDER BY publishing_date DESC LIMIT 6");
+                <?php $articles = executeQuery("SELECT * FROM posts 
+                INNER JOIN categories ON category_id = id_category
+                INNER JOIN images ON image_id = id_image 
+                INNER JOIN users ON user_id = id_user 
+                ORDER BY publishing_date DESC LIMIT 6");
                     foreach($articles as $article):
                 ?>
                 
@@ -52,7 +57,7 @@
                     <div class="post-block">
                         <div class="post-img">
                             <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="imghover">
-                                <img src="<?= $article->featured_image_small?>" alt="<?= $article->post_title?>" class="img-responsive">
+                                <img src="<?= $article->small_image_path?>" alt="<?= $article->alt?>" class="img-responsive">
                             </a>
                         </div>
                         <!-- post block -->
@@ -71,7 +76,7 @@
                                 </span>
                             </div>
                             <h4>
-                                <a href="#" class="title"><?= $article->post_title?></a>
+                                <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="title"><?= $article->post_title?></a>
                             </h4>
                             <p><?= $article->summary?></p>
                             <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="btn-link">read more</a>

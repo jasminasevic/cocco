@@ -30,7 +30,9 @@
             <div class="row">
 
                 <?php $articles = executeQuery("SELECT * FROM posts 
-                INNER JOIN categories ON category_id = id_category INNER JOIN users ON user_id=id_user ". 
+                INNER JOIN categories ON category_id = id_category
+                INNER JOIN images ON image_id = id_image  
+                INNER JOIN users ON user_id=id_user ". 
                 ($_GET['id_category'] ? " WHERE id_category=". $_GET['id_category'] : "")
                 . 
                 ($_GET['id_user'] ? " WHERE id_user=". $_GET['id_user'] : "")
@@ -42,7 +44,7 @@
                     <div class="post-block">
                         <div class="post-img">
                             <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="imghover">
-                                <img src="<?= $article->featured_image_small ?>" alt="<?= $article->post_title?>" class="img-responsive">
+                                <img src="<?= $article->small_image_path ?>" alt="<?= $article->alt?>" class="img-responsive">
                             </a>
                         </div>
                         <!-- post block -->

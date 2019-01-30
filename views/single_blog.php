@@ -34,8 +34,16 @@
                             if(isset($_GET['id'])) :
                             $id = $_GET['id'];
 
-                            $query_prepare =$conn->prepare("SELECT * FROM posts p INNER JOIN categories c ON p.category_id=c.id_category 
-                            INNER JOIN users u ON p.user_id=u.id_user WHERE id_post = :id"); //Pripremanje upita za izvrsavanje
+                            $query_prepare =$conn->prepare("SELECT p.post_title, p.post_text, p.publishing_date, 
+                            c.category_title, c.id_category, 
+                            u.id_user, u.first_name, u.last_name, u.biography, u.title, u.registration_date, 
+                            i.small_image_path AS user_small, i.alt AS user_alt,
+                            im.image_path AS post_large, im.small_image_path AS post_small, im.alt AS post_alt
+                            FROM posts p INNER JOIN categories c ON p.category_id=c.id_category 
+                            INNER JOIN users u ON p.user_id=u.id_user 
+                            INNER JOIN images i ON u.image_id = i.id_image 
+                            INNER JOIN images im ON im.id_image=p.image_id 
+                            WHERE id_post = :id"); //Pripremanje upita za izvrsavanje
                             $query_prepare->execute(array(":id"=>$id)); // Izvrsavanje upita sa konkretnim parametrom
                             $single_post = $query_prepare->fetch(); // Dohvatanje samo jednog reda kao rezultat
 
@@ -46,7 +54,7 @@
                                 <!-- post holder -->
                                 <div class="post-img">
                                     <!-- post img -->
-                                    <img src="<?= $single_post->featured_image?>" alt="<?= $single_post->post_title?>" class="img-responsive">
+                                    <img src="<?= $single_post->post_large?>" alt="<?= $single_post->post_alt?>" class="img-responsive">
                                 </div>
                                 <!-- /.post img -->
                                 <div class="post-content">
@@ -83,8 +91,10 @@
                                         <div class="row">
                                                 <?php 
                                                    $category=$single_post->id_category;
-                                                   $related_posts = executeQuery("SELECT * FROM posts INNER JOIN categories 
-                                                   ON category_id=id_category WHERE id_post != $id AND id_category = $category 
+                                                   $related_posts = executeQuery("SELECT * FROM posts 
+                                                   INNER JOIN images ON image_id = id_image 
+                                                   INNER JOIN categories  ON category_id=id_category 
+                                                   WHERE id_post != $id AND id_category = $category 
                                                    ORDER BY publishing_date LIMIT 2");
                                                    foreach($related_posts as $related_post):
                                                 ?>
@@ -93,7 +103,7 @@
                                                     <!-- related post -->
                                                     <div class="related-img">
                                                         <a href="index.php?page=single_blog&id=<?=$related_post->id_post ?>" class="imghover">
-                                                            <img src="<?= $related_post->featured_image_small?>" alt="" class="img-responsive">
+                                                            <img src="<?= $related_post->small_image_path?>" alt="<?= $related_post->post_alt?>" class="img-responsive">
                                                         </a>
                                                     </div>
                                                     <div class="related-post-content">
@@ -127,7 +137,7 @@
                                 <div class=" author-block">
                                     <div class="author-img">
                                     <a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="imghover">
-                                        <img src="<?= $single_post->image_small?>" class="img-circle" alt="<?= $single_post->first_name . ' ' . $single_post->last_name . ' portrait'  ?>">
+                                        <img src="<?= $single_post->user_small?>" class="img-circle" alt="<?= $single_post->user_alt ?>">
                                     </a>
                                     </div>
                                     <div class="author-post-content ">

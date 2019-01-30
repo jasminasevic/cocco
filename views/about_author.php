@@ -30,7 +30,9 @@
                 if(isset($_GET['id_user'])) :
                 $id = $_GET['id_user'];
 
-                $query_prepare =$conn->prepare("SELECT * FROM users WHERE id_user = :id"); //Pripremanje upita za izvrsavanje
+                $query_prepare =$conn->prepare("SELECT * FROM users 
+                INNER JOIN images ON image_id = id_image
+                WHERE id_user = :id"); //Pripremanje upita za izvrsavanje
                 $query_prepare->execute(array(":id"=>$id)); // Izvrsavanje upita sa konkretnim parametrom
                 $single_user = $query_prepare->fetch(); // Dohvatanje samo jednog reda kao rezultat
 
@@ -51,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
-                    <img src="<?= $single_user->image?>" alt="" class="img-responsive">
+                    <img src="<?= $single_user->image_path?>" alt="<?= $single_user->alt?>" class="img-responsive">
                 </div>
 
                 <?php endif; ?>
