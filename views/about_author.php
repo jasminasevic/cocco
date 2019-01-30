@@ -47,7 +47,7 @@
                         <p><?= $single_user->biography?></p>
                     </div>
                     <div class="author-content">                       
-                        <a href="index.php?page=blog_listing&id_user=<?= $single_user->id_user ?>" class="btn btn-primary">View All Post by <?= $single_user->first_name?></a> 
+                        <a href="index.php?page=blog_listing&id_user=<?= $single_user->id_user ?>" class="btn btn-primary">View All Posts by <?= $single_user->first_name?></a> 
                     </div>
                 </div>
                 <div class="col-lg-7 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-12 col-xs-12">

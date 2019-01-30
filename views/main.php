@@ -18,7 +18,7 @@
                             <div class="slider-captions">
                                 <h1 class="slider-title"><?= $slider->title ?></h1>
                                 
-                                <a href="#" class="btn btn-default btn-lg hidden-sm hidden-xs">Read all articles</a>
+                                <a href="index.php?page=blog_listing" class="btn btn-default btn-lg hidden-sm hidden-xs">Read all articles</a>
                             </div>
                         </div>
                     </div>

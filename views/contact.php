@@ -7,7 +7,7 @@
                         <h1 class="page-title ">Contact us</h1>
                         <div class="page-breadcrumb">
                             <ol class="breadcrumb">
-                                <li><a href="#">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li>contact us</li>
                             </ol>
                         </div>
@@ -79,7 +79,7 @@
                             <ul>
                                 <li><i class="icon-placeholder"></i>Knez Mihailova 1, Belgrade, Serbia</li>
                                 <li><i class="icon-phone-call"></i>+38111-123-4567</li>
-                                <li><i class="icon-envelope"></i>info@cocco.com</li>
+                                <li><i class="icon-envelope"></i><a href="mailto:info@cocco.com">info@cocco.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -87,12 +87,4 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- map-start -->
-            <div>
-                <div id="contact-map"></div>
-            </div>
-            <!-- map-close -->
-        </div>
-    </div>
+ 

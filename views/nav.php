@@ -41,9 +41,17 @@
                     </div>
                 </div>
                 <div class="col-lg-2 hidden-md hidden-sm hidden-xs">
-                    <div class="header-btn">
-                        <a href="#" class="btn btn-default">Login</a>
-                    </div>
+                    <?php
+                        if(isset($_SESSION['user'])):
+                    ?>
+                        <div class="header-btn">
+                            <a href="php/logout.php"  class="btn btn-default">Logout</a>
+                        </div>
+                    <?php else: ?>
+                        <div class="header-btn">
+                            <a href="index.php?page=login" class="btn btn-default">Login</a>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

@@ -55,7 +55,9 @@
                                         <!-- post header -->
                                         <h2 class="post-title"><?= $single_post->post_title?></h2>
                                         <div class="meta">
-                                            <span class="meta-categories"><a href="#"><?= $single_post->category_title?></a></span>
+                                            <span class="meta-categories">
+                                                <a href="index.php?page=blog_listing&id_category=<?= $single_post->id_category; ?>"><?= $single_post->category_title?></a>
+                                            </span>
                                             <span class="meta-date">
                                             <?php $publishing_date_time=explode(" ", $single_post->publishing_date);
                                                 $publishing_date = explode("-", $publishing_date_time[0]);
@@ -71,40 +73,43 @@
                                     <p> <?= $single_post->post_text?></p>
                                     <div class="related-post-block">
                                         <!-- related post block -->
+
+
                                         <div class="row">
                                             <div class="col-lg-12 col-sm-12 col-md-12 col-sm-12">
                                                 <h3 class="related-post-title">Related Posts</h3>
                                             </div>
                                         </div>
                                         <div class="row">
+                                                <?php 
+                                                   $category=$single_post->id_category;
+                                                   $related_posts = executeQuery("SELECT * FROM posts INNER JOIN categories 
+                                                   ON category_id=id_category WHERE id_post != $id AND id_category = $category 
+                                                   ORDER BY publishing_date LIMIT 2");
+                                                   foreach($related_posts as $related_post):
+                                                ?>
                                             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                                                 <div class="related-post">
                                                     <!-- related post -->
                                                     <div class="related-img">
-                                                        <a href="#" class="imghover"><img src="images/related-post-2.jpg" alt="" class="img-responsive"></a>
+                                                        <a href="index.php?page=single_blog&id=<?=$related_post->id_post ?>" class="imghover">
+                                                            <img src="<?= $related_post->featured_image_small?>" alt="" class="img-responsive">
+                                                        </a>
                                                     </div>
                                                     <div class="related-post-content">
-                                                        <h4 class="related-title"><a href="#" class="title">Drinking water dilutes 
-stomach acid</a></h4>
-                                                        <div class="meta"><span class="meta-categories">in <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>" class="">"diet tips"</a> </span></div>
+                                                        <h4 class="related-title">
+                                                            <a href="index.php?page=single_blog&id=<?=$related_post->id_post ?>" class="title"><?= $related_post->post_title?> </a>
+                                                        </h4>
+                                                        <div class="meta">
+                                                            <span class="meta-categories">in 
+                                                                <a href="index.php?page=blog_listing&id_category=<?= $related_post->id_category; ?>" class=""><?= $related_post->category_title?></a>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <!-- /.related post -->
                                             </div>
-                                            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                                                <div class="related-post">
-                                                    <!-- related post -->
-                                                    <div class="related-img">
-                                                        <a href="#" class="imghover"><img src="images/related-post-1.jpg" alt="" class="img-responsive"></a>
-                                                    </div>
-                                                    <div class="related-post-content">
-                                                        <h4 class="related-title"><a href="#" class="title">Top 5 natural therapies
-to fight hpylori</a></h4>
-                                                        <div class="meta"><span class="meta-categories">in <a href="index.php?page=blog_listing&id_category=<?= $article->id_category; ?>" class="">"health care</a> </span></div>
-                                                    </div>
-                                                </div>
-                                                <!-- /.related post -->
-                                            </div>
+                                                   <?php endforeach; ?>
                                         </div>
                                     </div>
                                     <!-- /.related post block -->
@@ -127,7 +132,10 @@ to fight hpylori</a></h4>
                                     </div>
                                     <div class="author-post-content ">
                                         <div class="author-header">
-                                            <h3><a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="title"><?= $single_post->first_name .' '. $single_post->last_name?> </a></h3></div>
+                                            <h3>
+                                                <a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="title"><?= $single_post->first_name .' '. $single_post->last_name?> </a>
+                                            </h3>
+                                        </div>
                                         <div class="author-meta "><?= $single_post->title ?></div>
                                         <div class="author-content">
                                             <p><?= $single_post->biography?></p>
@@ -158,7 +166,9 @@ to fight hpylori</a></h4>
                             <?php $categories=executeQuery("SELECT * FROM categories"); 
                                 foreach($categories as $category):
                             ?>
-                                <li><a href="index.php?page=blog_listing&id_category=<?= $category->id_category; ?>"><?= $category->category_title?></a></li>
+                                <li>
+                                    <a href="index.php?page=blog_listing&id_category=<?= $category->id_category; ?>"><?= $category->category_title?></a>
+                                </li>
                             <?php endforeach;?>
                         </ul>
                     </div>

@@ -32,6 +32,12 @@ switch($page){
     case "author":
         include "views/author.php";
         break;
+    case "login":
+        include "views/login.php";
+        break;
+    case "admin":
+        include "views/admin.php";
+        break;
     default:
         include "views/main.php";
         break;
