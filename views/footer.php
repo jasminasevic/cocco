@@ -90,6 +90,8 @@
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/testimonial-slider.js"></script>
+    <script type="text/javascript" src="js/registration.js"></script>
+    <script type="text/javascript" src="js/user_registration.js"></script>
 </body>
 
 </html>

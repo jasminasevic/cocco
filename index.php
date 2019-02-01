@@ -10,6 +10,7 @@ if(isset($_GET['page'])){
 
 include "views/head.php";
 include "views/nav.php";
+
 switch($page){
     case "main":
         include "views/main.php";

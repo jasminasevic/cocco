@@ -44,37 +44,37 @@
                         </small> 
                     </p>
                     <div class="row">
-                        <form>
+                        <form id="signUpForm" action="<?= $_SERVER['PHP_SELF']. '?page=login' ?>" method="post" >
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
-                                    <label class="control-label sr-only " for="firstName"></label>
-                                    <input id="firstName" type="text" placeholder="First Name" class="form-control">
+                                    <label class="control-label sr-only " for="firstName"></label><span class="star">* Enter valid first name</span>
+                                    <input id="regFirstName" name="regFirstName" type="text" placeholder="First Name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
-                                    <label class="control-label sr-only " for="lastName"></label>
-                                    <input id="lastName" type="text" placeholder="Last Name" class="form-control">
+                                    <label class="control-label sr-only " for="lastName"></label><span class="star">* Enter valid last name</span>
+                                    <input id="regLastName" name="regLastName" type="text" placeholder="Last Name" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
-                                    <label class="control-label sr-only " for="email"></label>
-                                    <input id="email" type="text" placeholder="Email" class="form-control">
+                                    <label class="control-label sr-only " for="email"></label><span class="star">* Enter valid email address</span>
+                                    <input id="regEmail" name="regEmail" type="text" placeholder="Email" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
-                                    <label class="control-label sr-only " for="password"></label>
-                                    <input id="password" type="text" placeholder="Password" class="form-control">
+                                    <label class="control-label sr-only " for="password"></label><span class="star">Enter valid password</span>
+                                    <input id="regPass" name="regPass" type="text" placeholder="Password" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <button class="btn btn-primary">Sign Up</button>
+                                <button type="submit" class="btn btn-primary" id="btnSubmit" name="btnSubmit">Sign Up</button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </form>                       
             </div>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
