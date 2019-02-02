@@ -66,7 +66,7 @@
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
                                     <label class="control-label sr-only " for="password"></label><span class="star">Enter valid password</span>
-                                    <input id="regPass" name="regPass" type="text" placeholder="Password" class="form-control">
+                                    <input id="regPass" name="regPass" type="password" placeholder="Password" class="form-control">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -95,7 +95,7 @@
                                     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="firstName"></label>
-                                            <input id="logPassword" name="logPassword" type="text" placeholder="Password" class="form-control">
+                                            <input id="logPassword" name="logPassword" type="password" placeholder="Password" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

@@ -69,18 +69,9 @@ $(document).ready(function () {
                 .hide();
         }
 
-        console.log("pre flaga");
-
         if (!flag) {
             return flag;
         }
-
-        console.log("posle flaga");
-
-        // var firstName = document.getElementById("regFirstName").value;
-        // var lastName = document.getElementById("regLastName").value;
-        // var email = document.getElementById("regEmail").value;
-        // var pass = document.getElementById("regPass").value;
 
         $.ajax({
             method: "POST",
@@ -95,19 +86,13 @@ $(document).ready(function () {
             },
             success: function (podaci) {
                 alert(podaci);
-                //                alert("Korisnik je uspesno unet u bazu.");
             },
             error: function (xhr, statusTxt, error) {
                 var status = xhr.status;
                 switch (status) {
-                    case 500: {
-                        console.log(
-                            xhr.responseText
-                        );
-
+                    case 500:
                         alert("Greska na serveru. Trenutno nije moguce uneti korisnika.");
                         break;
-                    }
                     case 404:
                         alert("Stranica nije pronadjena.");
                         break;

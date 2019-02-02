@@ -22,7 +22,9 @@
                 <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="footer-widget">
                         <h3 class="footer-title">Quick Links</h3>
-                        <ul class="angle angle-right">
+
+                        <?php echo build_menu_without_childern($novi, $parent = 0); ?>
+                        <!-- <ul class="angle angle-right">
                             <li>
                                 <a href="index.php">Home </a>
                             </li>
@@ -35,7 +37,7 @@
                             <li>
                                 <a href="index.php?page=contact">Contact</a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 <!-- footer-useful links-close -->
