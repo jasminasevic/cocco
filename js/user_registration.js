@@ -86,6 +86,8 @@ $(document).ready(function () {
             },
             success: function (podaci) {
                 alert(podaci);
+                //      $('#signUpForm').children('input').val('');
+                $('.register-input').val('');
             },
             error: function (xhr, statusTxt, error) {
                 var status = xhr.status;

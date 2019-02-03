@@ -24,20 +24,7 @@
                         <h3 class="footer-title">Quick Links</h3>
 
                         <?php echo build_menu_without_childern($novi, $parent = 0); ?>
-                        <!-- <ul class="angle angle-right">
-                            <li>
-                                <a href="index.php">Home </a>
-                            </li>
-                            <li>
-                                <a href="index.php?page=blog_listing">Blog </a>
-                            </li>
-                            <li>
-                                <a href="index.php?page=about_us">About</a>
-                            </li>
-                            <li>
-                                <a href="index.php?page=contact">Contact</a>
-                            </li>
-                        </ul> -->
+
                     </div>
                 </div>
                 <!-- footer-useful links-close -->
@@ -92,8 +79,8 @@
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/testimonial-slider.js"></script>
-    <script type="text/javascript" src="js/registration.js"></script>
     <script type="text/javascript" src="js/user_registration.js"></script>
+    <script type="text/javascript" src="js/contact-form-check.js"></script>
 </body>
 
 </html>

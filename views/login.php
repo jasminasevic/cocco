@@ -48,25 +48,25 @@
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
                                     <label class="control-label sr-only " for="firstName"></label><span class="star">* Enter valid first name</span>
-                                    <input id="regFirstName" name="regFirstName" type="text" placeholder="First Name" class="form-control">
+                                    <input id="regFirstName" name="regFirstName" type="text" placeholder="First Name" class="form-control register-input">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
                                     <label class="control-label sr-only " for="lastName"></label><span class="star">* Enter valid last name</span>
-                                    <input id="regLastName" name="regLastName" type="text" placeholder="Last Name" class="form-control">
+                                    <input id="regLastName" name="regLastName" type="text" placeholder="Last Name" class="form-control register-input">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
                                     <label class="control-label sr-only " for="email"></label><span class="star">* Enter valid email address</span>
-                                    <input id="regEmail" name="regEmail" type="text" placeholder="Email" class="form-control">
+                                    <input id="regEmail" name="regEmail" type="text" placeholder="Email" class="form-control register-input">
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
                                 <div class="form-group">
-                                    <label class="control-label sr-only " for="password"></label><span class="star">Enter valid password</span>
-                                    <input id="regPass" name="regPass" type="password" placeholder="Password" class="form-control">
+                                    <label class="control-label sr-only " for="password"></label><span class="star">* Enter valid password</span>
+                                    <input id="regPass" name="regPass" type="password" placeholder="Password" class="form-control register-input">
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

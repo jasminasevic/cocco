@@ -32,39 +32,39 @@
                             <h1>Get In Touch</h1>
                             <p class="mb40">Drop us a line via the contact form. We will do our best to reply as soon as possible. </p>
                             <div class="row">
-                                <form>
+                                <form id="contactForm" action="<?= $_SERVER['PHP_SELF'].'?page=contact' ?>" action="post">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="firstName"></label>
-                                            <input id="firstName" type="text" placeholder="First Name" class="form-control">
+                                            <input id="contactFirstName" name="contactFirstName" type="text" placeholder="First Name" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="lastName"></label>
-                                            <input id="lastName" type="text" placeholder="Last Name" class="form-control">
+                                            <input id="contactLastName" name="contactLastName" type="text" placeholder="Last Name" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="email"></label>
-                                            <input id="email" type="text" placeholder="Email" class="form-control">
+                                            <input id="contactEmail" name="contactEmail" type="text" placeholder="Email" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only " for="subject"></label>
-                                            <input id="subject" type="text" placeholder="Subject" class="form-control">
+                                            <input id="contactSubject" name="contactSubject" type="text" placeholder="Subject" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <div class="form-group">
                                             <label class="control-label sr-only" for="textarea"></label>
-                                            <textarea class="form-control" id="textarea" name="textarea" rows="4" placeholder="Messages"></textarea>
+                                            <textarea class="form-control" id="contactMessage" name="contactMessage" rows="4" placeholder="Messages"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <button class="btn btn-primary">send us message</button>
+                                        <button class="btn btn-primary" id="contactBtn" name="contactBtn">send us message</button>
                                     </div>
                             </div>
                         </div>

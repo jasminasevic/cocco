@@ -41,6 +41,9 @@ switch($page){
     case "admin":
         include "views/admin.php";
         break;
+    case "contact-form-submitted":
+        include "views/contact-form-submitted.php";
+        break;
     default:
         include "views/main.php";
         break;
