@@ -40,7 +40,7 @@
                         header("Location: ../index.php?page=admin");
                     }
                     else{
-                        header("Location: ../index.php?page=main");
+                        header("Location: ../index.php?page=poll");
                     }
                 }
             else{

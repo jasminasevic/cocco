@@ -66,9 +66,9 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                         <button class="btn btn-primary" id="contactBtn" name="contactBtn">send us message</button>
                                     </div>
+                                </form>
                             </div>
-                        </div>
-                        </form>
+                        </div>   
                     </div>
                 </div>
                 <div class="col-lg-offset-1 col-lg-4 col-md-offset-1 col-md-4 col-sm-12 col-xs-12">

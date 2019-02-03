@@ -59,11 +59,9 @@
         // $usermessage = "Thank you for your email. We'll get back to you as soon as possible.";
         mail($to,$subject,$message,$headers);
         // mail($user,$usersubject,$usermessage,$userheaders);
-
         //echo "sve kul";
-        echo '<script>window.location.href = "index.php?page=submited";</script>';
-
-        // header("Location: ../index.php?page=submited");
+        echo '<script>window.location.href = "index.php?page=contact-form-submitted";</script>';
+        // header("Location: ../index.php?page=contact-form-submitted");
         
     }
 

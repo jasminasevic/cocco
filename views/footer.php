@@ -81,6 +81,7 @@
     <script type="text/javascript" src="js/testimonial-slider.js"></script>
     <script type="text/javascript" src="js/user_registration.js"></script>
     <script type="text/javascript" src="js/contact-form-check.js"></script>
+    <script type="text/javascript" src="js/poll-vote.js"></script>
 </body>
 
 </html>

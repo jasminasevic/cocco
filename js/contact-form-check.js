@@ -2,7 +2,7 @@ $(document).ready(function () {
     $("#contactBtn").click(function (evt) {
         evt.preventDefault();
 
-        console.log("Contact form button works");
+        //console.log("Contact form button works");
 
         var arrayOk = [];
         var arrayNotOk = [];
@@ -84,11 +84,10 @@ $(document).ready(function () {
             success: function (podaci) {
 
                 if (podaci) {
-                    alert("You will now be redirected.");
+                    //$('#contact-form').hide();
+                    //alert("You will now be redirected.");
                     window.location = "index.php?page=contact-form-submitted";
                 }
-                //$('#contactForm').children('input').val('');
-                //$('.contact-input').val(''); - dodaj klasu u sve inpute
             },
             error: function (xhr, statusTxt, error) {
                 var status = xhr.status;
