@@ -11,6 +11,7 @@ if(isset($_GET['page'])){
 include "views/head.php";
 
 include "php/menu_builder.php";
+
 include "views/nav.php";
 
 switch($page){

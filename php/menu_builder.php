@@ -30,7 +30,7 @@
         $result = "<ul>";
         foreach ($rows as $row) {
             if ($row['parent_id'] == $parent) {
-                $result .= "<li><a href='" . $row['path'] . "&parent=" . $row['parent_id'] . "'>" 
+                $result .= "<li><a href='" . $row['path'] . "'>" 
                     . $row['title'] . "</a>";
                     if (has_children($rows, $row['id'])) {
                         $result .= build_menu($rows, $row['id']);
@@ -47,7 +47,7 @@
         $result = "<ul class='angle angle-right'>";
         foreach ($rows as $row) {
             if ($row['parent_id'] == $parent) {
-                $result .= "<li><a href='" . $row['path'] . "&parent=" . $row['parent_id'] . "'>" 
+                $result .= "<li><a href='" . $row['path'] . "'>" 
                         . $row['title'] . "</a>";
                 $result .= "</li>";
                 }
