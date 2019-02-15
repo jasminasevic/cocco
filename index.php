@@ -46,6 +46,9 @@ switch($page){
     case "admin-post":
         include "views/admin-post.php";
         break;
+    case "admin-quote":
+        include "views/admin-quote.php";
+        break;
     case "admin-user":
         include "views/admin-user.php";
         break;

@@ -4,16 +4,16 @@
                 <div class="row">
                     <div class="col-sm-8"><h2>MANAGE PAGES</h2><br/></div>
                     <div class="col-sm-12">
+                        <a href="index.php?page=admin-user"><button class="btn btn-primary" name="btnAddUser" style="width:30%">USERS</button></a>
+                    </div>
+                    <div class="col-sm-12">
                         <a href="index.php?page=admin-post"><button class="btn btn-primary" name="btnAddPost" style="width:30%">POSTS</button></a>
                     </div>
                     <div class="col-sm-12">
-                        <a href="index.php?page=admin-user"><button class="btn btn-primary" name="btnAddPost" style="width:30%">USERS</button></a>
+                        <a href="index.php?page=admin-quote"><button class="btn btn-primary" name="btnAddQuote" style="width:30%">QUOTES</button></a>
                     </div>
                     <div class="col-sm-12">
                         <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">CATEGORIES</button></a>
-                    </div>
-                    <div class="col-sm-12">
-                        <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">QUOTES</button></a>
                     </div>
                     <div class="col-sm-12">
                         <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">ROLES</button></a>

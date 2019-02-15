@@ -23,7 +23,7 @@ $(document).ready(function(){
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-                    <div class="col-sm-8"><h2><b>Add new post</b></h2></div>
+                    <div class="col-sm-8"><h2><b>Add new user</b></h2></div>
                 </div>
             </div>
 

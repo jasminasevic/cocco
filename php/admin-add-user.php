@@ -55,11 +55,11 @@ if (isset($_POST['btnSaveUser'])) {
     if (count($errors) == 0) {
 
         $imageName = time() . $fileName;
-        $newPath = "images/user-images" . $imageName;
+        $newPath = "images/user-images/" . $imageName;
 
 
-        echo $imageName;
-        echo $newPath;
+        echo $imageName. "<br/>";
+        echo $newPath ."<br/>";
 
         if (move_uploaded_file($tmpPath, $newPath)) {
 
