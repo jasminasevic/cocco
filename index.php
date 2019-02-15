@@ -11,6 +11,7 @@ if(isset($_GET['page'])){
 include "views/head.php";
 
 include "php/menu_builder.php";
+include "php/admin-add-user.php";
 
 include "views/nav.php";
 
@@ -41,6 +42,12 @@ switch($page){
         break;
     case "admin":
         include "views/admin.php";
+        break;
+    case "admin-post":
+        include "views/admin-post.php";
+        break;
+    case "admin-user":
+        include "views/admin-user.php";
         break;
     case "poll":
         include "views/poll.php";

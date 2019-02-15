@@ -1,1 +1,27 @@
-ULOGOVANI STE KAO ADMIN!
+<div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>MANAGE PAGES</h2><br/></div>
+                    <div class="col-sm-12">
+                        <a href="index.php?page=admin-post"><button class="btn btn-primary" name="btnAddPost" style="width:30%">POSTS</button></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="index.php?page=admin-user"><button class="btn btn-primary" name="btnAddPost" style="width:30%">USERS</button></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">CATEGORIES</button></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">QUOTES</button></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">ROLES</button></a>
+                    </div>
+                    <div class="col-sm-12">
+                        <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">MAIN SLIDER</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
