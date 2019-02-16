@@ -1,3 +1,7 @@
+<?php
+    if($_SESSION['user']->role_title=="admin"):
+ ?>
+
 <!-- ADD NEW USER -->
 <div class="container toggle" style="display:visible">
         <br/>
@@ -164,4 +168,19 @@
                     </table>
                 </div>
             </div>     
+
+    <?php else: ?>
+    <div class="container" style="min-height:300px;">
+        <br/>
+        <div class="table-wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                    <div class="alert alert-danger"> 
+                        You don't have access to this page
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
                                 
