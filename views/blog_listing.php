@@ -107,7 +107,7 @@
                             if($curpage>1):
                             // ********** show the first page
                             echo "<li>";
-                                echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_category}{$id_user}&curpage=1' title='Go to the first page.' class='customBtn'>";
+                                echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_user}{$id_category}&curpage=1' title='Go to the first page.' class='customBtn'>";
                                 echo "<span style='margin:0 .5em;'> << </span>";
                             echo "</a>";
                             echo "</li>";
@@ -115,7 +115,7 @@
                             // ********** show the previous page
                             $prev_page = $curpage - 1;
                             echo "<li>";
-                            echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_category}{$id_user}&curpage={$prev_page}' title='Previous page is {$prev_page}.' class='customBtn'>";
+                            echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_user}{$id_category}&curpage={$prev_page}' title='Previous page is {$prev_page}.' class='customBtn'>";
                                 echo "<span style='margin:0 .5em;'> < </span>";
                             echo "</a>";
                             echo "</li>";
@@ -138,18 +138,19 @@
                             $total_pages = ceil($total_category_rows / $recordsPerPage);                 
                             else:
                             $total_pages = ceil($total_rows / $recordsPerPage);
-                            endif;
+                           
 
-                            if(isset($_GET['id_user'])):
-                                $id_author = $_GET['id_user'];
-                            $author_row_query = executeQuery("SELECT COUNT(*) as total_author_rows FROM posts 
-                            INNER JOIN users ON user_id=id_user 
-                            WHERE user_id = {$id_author}");
-                            $total_author_rows = $author_row_query[0]->total_author_rows;
+                                if(isset($_GET['id_user'])):
+                                    $id_author = $_GET['id_user'];
+                                $author_row_query = executeQuery("SELECT COUNT(*) as total_author_rows FROM posts 
+                                INNER JOIN users ON user_id=id_user 
+                                WHERE user_id = {$id_author}");
+                                $total_author_rows = $author_row_query[0]->total_author_rows;
 
-                            $total_pages = ceil($total_author_rows / $recordsPerPage);                 
-                            else:
-                            $total_pages = ceil($total_rows / $recordsPerPage);
+                                $total_pages = ceil($total_author_rows / $recordsPerPage);                 
+                                else:
+                                $total_pages = ceil($total_rows / $recordsPerPage);
+                                endif;
                             endif;
                             
                             // range of num links to show
@@ -174,7 +175,7 @@
                                     // not current page
                                     else {
                                         echo "<li>";
-                                        echo " <a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_category}{$id_user}&curpage=$x' class='customBtn'>$x</a> ";
+                                        echo " <a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_user}{$id_category}&curpage=$x' class='customBtn'>$x</a> ";
                                         echo "</li>";
                                     }
                                 }
@@ -184,13 +185,13 @@
                                 // ********** show the next page
                                 $next_page = $curpage + 1;
                                 echo "<li>";
-                                    echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_category}{$id_user}&curpage={$next_page}' title='Next page is {$next_page}.' class='customBtn'>";
+                                    echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_user}{$id_category}&curpage={$next_page}' title='Next page is {$next_page}.' class='customBtn'>";
                                         echo "<span style='margin:0 .5em;'> > </span>";
                                     echo "</a>";
                                 echo "</li>";
                                 // ********** show the last page
                                 echo "<li>";
-                                    echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_category}{$id_user}&curpage={$total_pages}' title='Last page is {$total_pages}.' class='customBtn'>";
+                                    echo "<a href='{$_SERVER['PHP_SELF']}?page=blog_listing{$id_user}{$id_category}&curpage={$total_pages}' title='Last page is {$total_pages}.' class='customBtn'>";
                                         echo "<span style='margin:0 .5em;'> >> </span>";
                                     echo "</a>";
                                 echo "</li>";
