@@ -90,7 +90,6 @@
                         <th>Text</th>
                         <th>Category</th>
                         <th>Image</th>
-                        <th>Small Image</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -108,7 +107,6 @@
                         <td><?= $post->summary; ?></td>
                         <td><div style="max-height: 300px; overflow-y: scroll;"> <?= $post->post_text; ?></div></td>
                         <td><?= $post->category_title; ?></td>
-                        <td><img src='<?= $post->image_path; ?>' alt='<?= $post->alt; ?>'/></td>
                         <td><img src='<?= $post->image_path; ?>' alt='<?= $post->alt; ?>'/></td>
                         <td>
                             <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->

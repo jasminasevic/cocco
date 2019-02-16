@@ -2,6 +2,8 @@
 
 if (isset($_POST['btnSavePost'])) {
 
+    $id_user = $_SESSION['user']->id_user;
+
     $result='';
     $postTitle = trim($_POST['tbPostTitle']);
     $postSummary = trim($_POST['tbPostSummary']);
@@ -70,13 +72,14 @@ if (isset($_POST['btnSavePost'])) {
 
                
                 $postInsert = "INSERT INTO posts VALUES(null, :postTitle, :postText, :summary, 
-                null, '1', :category, :lastImage)";
+                null, :id_user, :category, :lastImage)";
 
                 $preparePostInsert = $conn->prepare($postInsert);
 
                 $preparePostInsert->bindParam(":postTitle", $postTitle);
                 $preparePostInsert->bindParam(":postText", $text);
                 $preparePostInsert->bindParam(":summary", $postSummary);
+                $preparePostInsert->bindParam(":id_user", $id_user);
                 $preparePostInsert->bindParam(":category", $category);
                 $preparePostInsert->bindParam(":lastImage", $obj_last);
 
