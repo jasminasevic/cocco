@@ -66,7 +66,7 @@
                     <div class="post-block">
                         <div class="post-img">
                             <a href="index.php?page=single_blog&id=<?= $article->id_post; ?>" class="imghover">
-                                <img src="<?= $article->small_image_path ?>" alt="<?= $article->alt?>" class="img-responsive">
+                                <img src="<?= $article->small_image_path ?>"  alt="<?= $article->alt?>" class="img-responsive">
                             </a>
                         </div>
                         <!-- post block -->

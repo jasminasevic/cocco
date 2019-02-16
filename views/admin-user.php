@@ -155,8 +155,8 @@
                                 <td><?= $user->role_title; ?></td>
                                 <td><?= $user->user_vote; ?></td>
                                 <td>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                    <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
+                                    <a href="#" class="delete delete-user" data-id='<?= $user->id_user; ?>' title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                 </td>
                             </tr>
                                 <?php endforeach;?>

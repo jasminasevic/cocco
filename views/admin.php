@@ -12,7 +12,7 @@
                     <div class="col-sm-12">
                         <a href="index.php?page=admin-post"><button class="btn btn-primary" name="btnAddPost" style="width:30%">POSTS</button></a>
                     </div>
-                    <div class="col-sm-12">
+                    <!-- <div class="col-sm-12">
                         <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">CATEGORIES</button></a>
                     </div>
                     <div class="col-sm-12">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-sm-12">
                         <a href="#"><button class="btn btn-primary" name="btnAddPost" style="width:30%">MAIN SLIDER</button></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

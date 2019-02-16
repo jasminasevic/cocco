@@ -160,14 +160,14 @@
 
 
                      <!-- widget-search-start -->
-                     <div class=" widget widget-search">
+                     <!-- <div class=" widget widget-search">
                         <form>
                             <div class="search-form">
                                 <input type="text" class="form-control " placeholder="Search Here">
                                 <button type="Submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>
-                    </div>
+                    </div> -->
                     <!-- widget-search-close -->
                     <!-- widget-categories-start -->
                     <div class=" widget widget-categories">

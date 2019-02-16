@@ -12,6 +12,7 @@ include "views/head.php";
 
 include "php/menu_builder.php";
 include "php/admin-add-user.php";
+include "php/admin-add-post.php";
 
 include "views/nav.php";
 

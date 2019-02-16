@@ -89,6 +89,9 @@
     <script type="text/javascript" src="js/admin-add-quote-ajax.js"></script>
     <script type="text/javascript" src="js/admin-delete-quote-ajax.js"></script>
     <script type="text/javascript" src="js/admin-add-user-ajax.js"></script>
+    <script type="text/javascript" src="js/admin-delete-user-ajax.js"></script>
+    <script type="text/javascript" src="js/admin-delete-post-ajax.js"></script>
+    
 
 </body>
 

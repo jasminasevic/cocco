@@ -1,24 +1,6 @@
 
-<script type="text/javascript">
-$(document).ready(function(){
-	// Edit row on edit button click
-	$(document).on("click", ".edit", function(){		
-        $(this).parents("tr").find("td:not(:last-child)").each(function(){
-			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-		});		
-		$(this).parents("tr").find(".add, .edit").toggle();
-		$(".add-new").attr("disabled", "disabled");
-    });
-	// Delete row on delete button click
-	$(document).on("click", ".delete", function(){
-        $(this).parents("tr").remove();
-		$(".add-new").removeAttr("disabled");
-    });
-});
-</script>
-
     <!-- ADD NEW POST -->
-    <div class="container toggle" id="editcontent1" style="display:none">
+    <div class="container toggle" style="display:visible">
         <br/>
         <div class="table-wrapper">
             <div class="table-title">
@@ -27,8 +9,11 @@ $(document).ready(function(){
                 </div>
             </div>
 
-            <form action="<?php echo $_SERVER['PHP_SELF']."?page=admin-post" ; ?>" method="POST" enctype="multipart/form-data">
-                <div class="row">
+            <form action="<?php echo $_SERVER['PHP_SELF']."?page=admin-post" ?>" method="POST" enctype="multipart/form-data">
+            <div class="col-sm-12 ">
+                <?php echo $result; ?>    
+            </div>    
+            <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="postTitle">Post Title</label>
@@ -49,20 +34,8 @@ $(document).ready(function(){
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="image">Large image</label>
-                            <input type="file" class="form-control" id="fPostImage" name="fPostImage">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="image">Small image</label>
-                            <input type="file" class="form-control" id="fPostImage" name="fPostImageSmall">
-                        </div>
-                    </div>  
-                    <div class="col-sm-6">
-                        <div class="form-group">
                             <label for="role">Category</label><br/>
-                            <select name="ddlPostAuthor">
+                            <select name="ddlPostCategory">
                                 <option value="0"> Select category </option>
                                     <?php
                                         $categories = executeQuery("SELECT * FROM categories");
@@ -75,8 +48,14 @@ $(document).ready(function(){
                             </select>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="image">Large image (360 x 340 px)</label>
+                            <input type="file" class="form-control" id="fPostImage" name="fPostImage">
+                        </div>
+                    </div>
                     <div class="col-sm-12 text-center">
-                        <button type="submit" class="btn btn-primary" name="btnSavePost">Publish Post</button>
+                        <button type="submit" id="btnSavePost" name="btnSavePost">Publish Post</button>
 
                     </div>
                 </div>
@@ -95,9 +74,9 @@ $(document).ready(function(){
                     <div class="col-sm-8"><br/>
                         <h2>Post Details</h2>
                     </div>
-                    <div class="col-sm-12">
+                    <!-- <div class="col-sm-12">
                         <a href="#editcontent1"><button class="btn btn-primary clasadruga" name="btnAddPost" >Add new post</button></a>                   
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <br/>
@@ -130,8 +109,10 @@ $(document).ready(function(){
                         <td><img src='<?= $post->image_path; ?>' alt='<?= $post->alt; ?>'/></td>
                         <td><img src='<?= $post->image_path; ?>' alt='<?= $post->alt; ?>'/></td>
                         <td>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            <!-- <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a> -->
+                            <a href="#" class="delete delete-post" data-id='<?= $post->id_post; ?>' title="Delete" data-toggle="tooltip">
+                                <i class="material-icons">&#xE872;</i>
+                            </a>
                         </td>
                     </tr>
                         <?php endforeach;?>
