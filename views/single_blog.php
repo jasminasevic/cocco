@@ -137,7 +137,7 @@
                                 <div class=" author-block">
                                     <div class="author-img">
                                     <a href="index.php?page=about_author&id_user=<?= $single_post->id_user?>" class="imghover">
-                                        <img src="<?= $single_post->user_small?>" class="img-circle" alt="<?= $single_post->user_alt ?>">
+                                        <img src="<?= $single_post->user_small?>" style="width:180px; height:180px; "class="img-circle" alt="<?= $single_post->user_alt ?>">
                                     </a>
                                     </div>
                                     <div class="author-post-content ">

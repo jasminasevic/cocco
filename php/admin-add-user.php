@@ -2,6 +2,7 @@
 
 if (isset($_POST['btnSaveUser'])) {
 
+    $result='';
     $firstName = trim($_POST['tbUserFirstName']);
     $lastName = trim($_POST['tbUserLastName']);
     $email = trim($_POST['tbUserEmail']);
@@ -42,6 +43,9 @@ if (isset($_POST['btnSaveUser'])) {
         $errors[] = "Password is not ok.";
     }
 
+    if($userRole=="0"){
+        $errors[] = "You have to select role";
+    }
     $allowedFormats = array("image/jpg", "image/jpeg", "image/png", "image/gif");
 
     if (!in_array($fileType, $allowedFormats)) {
@@ -58,16 +62,24 @@ if (isset($_POST['btnSaveUser'])) {
         $newPath = "images/user-images/" . $imageName;
 
 
-        echo $imageName. "<br/>";
-        echo $newPath ."<br/>";
-
         if (move_uploaded_file($tmpPath, $newPath)) {
-
             try {
+                $imageInsert = "INSERT INTO images VALUES(null, :alt, :image_path, :small_image_path)";
+                $prepareImageInsert = $conn->prepare($imageInsert);
+                $prepareImageInsert->bindParam(":alt", $firstName);
+                $prepareImageInsert->bindParam(":image_path", $newPath);
+                $prepareImageInsert->bindParam(":small_image_path", $newPath);
+
+                $resultImageInsert= $prepareImageInsert->execute();
+                $last_image_id = executeQuery('SELECT LAST_INSERT_ID() as last_id FROM images');
+                $obj = $last_image_id[0];
+                $obj_last= $obj->last_id;
+                $obj_last = intval($obj_last);
 
                 $pass=md5($pass);
                
-                $userInsert = "INSERT INTO users VALUES(null, :firstName, :lastName, :email, :pass, :biography, :position, null, :active, null, :role_id, :vote)";
+                $userInsert = "INSERT INTO users VALUES(null, :firstName, :lastName, :email, 
+                :pass, :biography, :position, null, '1', :lastImage, :role_id, :vote)";
 
                 $prepareUserInsert = $conn->prepare($userInsert);
 
@@ -77,14 +89,15 @@ if (isset($_POST['btnSaveUser'])) {
                 $prepareUserInsert->bindParam(":pass", $pass);
                 $prepareUserInsert->bindParam(":biography", $biography);
                 $prepareUserInsert->bindParam(":position", $position);
-                $prepareUserInsert->bindParam(":active", $active);
+                $prepareUserInsert->bindParam(":lastImage", $obj_last);
+                //$prepareUserInsert->bindParam(":active", $active);
                 $prepareUserInsert->bindParam(":role_id", $userRole);
                 $prepareUserInsert->bindParam(":vote", $vote);
 
                 $result= $prepareUserInsert->execute();
 
                 if ($result) {
-                    echo "New user has been added successfully!";
+                    $result='<div class="alert alert-danger">New user has been added successfully!</div>';
                 }
 
             } catch (PDOException $ex) {
@@ -92,19 +105,21 @@ if (isset($_POST['btnSaveUser'])) {
             }
 
         } else {
-            echo "File upload failed!";
+            $result='<div class="alert alert-danger">File upload failed!</div>';
         }
     } else {
 
-        echo "<ol>";
-
+        $result='<div class="alert alert-danger">';
         foreach ($errors as $error) {
-            echo "<li> $error </li>";
+            $result.=  $error . "<br/>";
         }
+        $result.= '</div>';
 
-        echo "</ol>";
     }
 }
-?>
+else{
+    $result='';
+}
 
-<!-- END ADDING NEW USER -->
+
+// <!-- END ADDING NEW USER -->

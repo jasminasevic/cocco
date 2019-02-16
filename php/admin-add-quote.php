@@ -48,11 +48,8 @@ if (isset($_POST["btnSaveQuote"])) {
 
             if ($result) {
                 echo "Quote added";
-                // $statusCode = 204;
-                // status_response_code($statusCode);
             } else {
                 echo "Error. Please try again";
-                // $statusCode = 500;
             }
         } catch (PDOException $e) {
             $statusCode = 500;

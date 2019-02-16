@@ -1,6 +1,6 @@
 
 <!-- ADD NEW QUOTE -->
-<div class="container toggle" style="display:none">
+<div class="container toggle" style="display:visible">
         <br/>
         <div class="table-wrapper">
             <div class="table-title">
@@ -62,9 +62,9 @@
                             <div class="col-sm-8"><br/>
                                 <h2>Quote details</h2>
                             </div>
-                            <div class="col-sm-12">
+                            <!-- <div class="col-sm-12">
                                 <a href="#"><button class="btn btn-primary clasadruga" name="btnAddQuote">Add new quote</button></a>                   
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <br/>

@@ -1,24 +1,5 @@
-<script type="text/javascript">
-$(document).ready(function(){
-	// Edit row on edit button click
-	$(document).on("click", ".edit", function(){		
-        $(this).parents("tr").find("td:not(:last-child)").each(function(){
-			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-		});		
-		$(this).parents("tr").find(".add, .edit").toggle();
-		$(".add-new").attr("disabled", "disabled");
-    });
-	// Delete row on delete button click
-	$(document).on("click", ".delete", function(){
-        $(this).parents("tr").remove();
-		$(".add-new").removeAttr("disabled");
-    });
-});
-</script>
-
-
 <!-- ADD NEW USER -->
-<div class="container toggle" id="editcontent2" style="display:none">
+<div class="container toggle" style="display:visible">
         <br/>
         <div class="table-wrapper">
             <div class="table-title">
@@ -28,7 +9,11 @@ $(document).ready(function(){
             </div>
 
         <form action="<?php echo $_SERVER['PHP_SELF']."?page=admin-user" ; ?>" method="POST" enctype="multipart/form-data">
-            <div class="row">
+        <div class="form-group">
+        <div class="col-sm-12 ">
+            <?php echo $result; ?>    
+        </div>    
+        <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="firstname">First Name</label>
@@ -68,7 +53,7 @@ $(document).ready(function(){
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="active">Active</label></br>
-                        <select name="ddlActive">
+                        <select name="ddlActive" id="ddlActive">
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -77,7 +62,7 @@ $(document).ready(function(){
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="active">Vote</label></br>
-                        <select name="ddlVote">
+                        <select name="ddlVote" id="ddlVote">
                             <option value="0">No</option>
                             <option value="1">Yes</option>
                         </select>
@@ -86,7 +71,7 @@ $(document).ready(function(){
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="role">Role</label><br/>
-                        <select name="ddlUserRole">
+                        <select name="ddlUserRole" id="ddlUserRole">
                             <option value="0"> Select role </option>
                                 <?php
                                     $roles = executeQuery("SELECT * FROM roles");
@@ -108,12 +93,13 @@ $(document).ready(function(){
                 
 
                 <div class="col-sm-12 text-center">
-                    <button type="submit" class="btn btn-primary" name="btnSaveUser" id="btnSaveUser">Add new user</button>
+                    <button type="submit" name="btnSaveUser" id="btnSaveUser">Add new user</button>
 
                 </div>
             </div>
             <!-- /.row -->
         </form>
+    </div>
 
     </div>
 </div>
@@ -127,9 +113,9 @@ $(document).ready(function(){
                             <div class="col-sm-8"><br/>
                                 <h2>User details</h2>
                             </div>
-                            <div class="col-sm-12">
-                                <a href="#editcontent2"><button class="btn btn-primary clasadruga" name="btnAddUser">Add new user</button></a>                   
-                            </div>
+                            <!-- <div class="col-sm-12">
+                                <a href="#"><button class="btn btn-primary clasadruga" name="btnAddUser">Add new user</button></a>                   
+                            </div> -->
                         </div>
                     </div>
                     <br/>

@@ -82,12 +82,13 @@
     <script type="text/javascript" src="js/user_registration.js"></script>
     <script type="text/javascript" src="js/contact-form-check.js"></script>
     <script type="text/javascript" src="js/poll-vote.js"></script>
-    <script type="text/javascript" src="js/toogle-admin-panel.js"></script>
+    <!-- <script type="text/javascript" src="js/toogle-admin-panel.js"></script> -->
 
     
     <!-- Admin panel -->
     <script type="text/javascript" src="js/admin-add-quote-ajax.js"></script>
     <script type="text/javascript" src="js/admin-delete-quote-ajax.js"></script>
+    <script type="text/javascript" src="js/admin-add-user-ajax.js"></script>
 
 </body>
 
