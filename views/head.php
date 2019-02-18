@@ -12,6 +12,8 @@
     <meta name="copyright" content="Jasmina Sevic @ 2019" />
     <meta name="language" content="english" />
 
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+
      <!-- Admin panel  -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">

@@ -51,7 +51,7 @@
                                 <a href="index.php?page=about_author&id_user=1">Author </a>
                             </li>
                             <li>
-                                <a href="#">Documentation </a>
+                                <a href="cocco-documentation.pdf" target="_blank">Documentation </a>
                             </li>
                         </ul>
 
